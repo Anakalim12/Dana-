@@ -1,0 +1,450 @@
+{
+    "name": "Integration GitHub",
+    "flow": [
+        {
+            "id": 1,
+            "module": "github:ActionGetUser",
+            "version": 4,
+            "parameters": {
+                "__IMTCONN__": 2586853
+            },
+            "mapper": {
+                "outputKeys": [
+                    "company",
+                    "databaseId",
+                    "hovercard{contexts{message octicon}}",
+                    "interactionAbility{expiresAt limit origin}",
+                    "isBountyHunter",
+                    "isCampusExpert",
+                    "isDeveloperProgramMember",
+                    "isEmployee",
+                    "isFollowingViewer",
+                    "isGitHubStar",
+                    "isHireable",
+                    "isSiteAdmin",
+                    "isViewer",
+                    "location",
+                    "pinnedItemsRemaining",
+                    "projectsResourcePath",
+                    "projectsUrl",
+                    "resourcePath",
+                    "status",
+                    "viewerCanChangePinnedItems",
+                    "viewerCanCreateProjects",
+                    "viewerCanFollow",
+                    "viewerIsFollowing"
+                ],
+                "pullRequests": true,
+                "savedReplies": true,
+                "projectsV2": true,
+                "projectsV2Direction": "first",
+                "login": "Anakalim12"
+            },
+            "metadata": {
+                "designer": {
+                    "x": 33,
+                    "y": -27
+                },
+                "restore": {
+                    "parameters": {
+                        "__IMTCONN__": {
+                            "label": "My GitHub connection",
+                            "data": {
+                                "scoped": "true",
+                                "connection": "github2"
+                            }
+                        }
+                    },
+                    "expect": {
+                        "login": {
+                            "mode": "chose",
+                            "label": "Anakalim12"
+                        },
+                        "commitComments": {
+                            "mode": "chose"
+                        },
+                        "followers": {
+                            "mode": "chose"
+                        },
+                        "following": {
+                            "mode": "chose"
+                        },
+                        "gists": {
+                            "mode": "chose"
+                        },
+                        "gistComments": {
+                            "mode": "chose"
+                        },
+                        "issues": {
+                            "mode": "chose"
+                        },
+                        "issueComments": {
+                            "mode": "chose"
+                        },
+                        "organizations": {
+                            "mode": "chose"
+                        },
+                        "pullRequests": {
+                            "mode": "chose"
+                        },
+                        "repositories": {
+                            "mode": "chose"
+                        },
+                        "savedReplies": {
+                            "mode": "chose"
+                        },
+                        "projectsV2": {
+                            "mode": "chose"
+                        },
+                        "watching": {
+                            "mode": "chose"
+                        },
+                        "pullRequestsDirection": {
+                            "label": "Kosong"
+                        },
+                        "savedRepliesDirection": {
+                            "label": "Kosong"
+                        },
+                        "projectsV2Direction": {
+                            "label": "Pertama"
+                        }
+                    }
+                },
+                "parameters": [
+                    {
+                        "name": "__IMTCONN__",
+                        "type": "account:github2,github",
+                        "label": "Connection",
+                        "required": true
+                    }
+                ],
+                "expect": [
+                    {
+                        "name": "login",
+                        "type": "select",
+                        "label": "Owner",
+                        "required": true
+                    },
+                    {
+                        "name": "outputKeys",
+                        "type": "select",
+                        "label": "Output",
+                        "multiple": true,
+                        "validate": {
+                            "enum": [
+                                "company",
+                                "databaseId",
+                                "hovercard{contexts{message octicon}}",
+                                "interactionAbility{expiresAt limit origin}",
+                                "isBountyHunter",
+                                "isCampusExpert",
+                                "isDeveloperProgramMember",
+                                "isEmployee",
+                                "isFollowingViewer",
+                                "isGitHubStar",
+                                "isHireable",
+                                "isSiteAdmin",
+                                "isViewer",
+                                "location",
+                                "pinnedItemsRemaining",
+                                "projectsResourcePath",
+                                "projectsUrl",
+                                "resourcePath",
+                                "status",
+                                "viewerCanChangePinnedItems",
+                                "viewerCanCreateProjects",
+                                "viewerCanFollow",
+                                "viewerIsFollowing"
+                            ]
+                        }
+                    },
+                    {
+                        "name": "commitComments",
+                        "type": "boolean",
+                        "label": "Show Commit Comments"
+                    },
+                    {
+                        "name": "followers",
+                        "type": "boolean",
+                        "label": "Show Followers"
+                    },
+                    {
+                        "name": "following",
+                        "type": "boolean",
+                        "label": "Show Following"
+                    },
+                    {
+                        "name": "gists",
+                        "type": "boolean",
+                        "label": "Show Gists"
+                    },
+                    {
+                        "name": "gistComments",
+                        "type": "boolean",
+                        "label": "Show Gist Comments"
+                    },
+                    {
+                        "name": "issues",
+                        "type": "boolean",
+                        "label": "Show Issues"
+                    },
+                    {
+                        "name": "issueComments",
+                        "type": "boolean",
+                        "label": "Show Issue Comments"
+                    },
+                    {
+                        "name": "organizations",
+                        "type": "boolean",
+                        "label": "Show Organizations"
+                    },
+                    {
+                        "name": "pullRequests",
+                        "type": "boolean",
+                        "label": "Show Pull Requests"
+                    },
+                    {
+                        "name": "repositories",
+                        "type": "boolean",
+                        "label": "Show Repositories"
+                    },
+                    {
+                        "name": "savedReplies",
+                        "type": "boolean",
+                        "label": "Show Saved Replies"
+                    },
+                    {
+                        "name": "projectsV2",
+                        "type": "boolean",
+                        "label": "Show Projects"
+                    },
+                    {
+                        "name": "watching",
+                        "type": "boolean",
+                        "label": "Show Watching"
+                    },
+                    {
+                        "name": "pullRequestsDirection",
+                        "type": "select",
+                        "label": "Direction",
+                        "validate": {
+                            "enum": [
+                                "first",
+                                "first"
+                            ]
+                        }
+                    },
+                    {
+                        "name": "savedRepliesDirection",
+                        "type": "select",
+                        "label": "Direction",
+                        "validate": {
+                            "enum": [
+                                "first",
+                                "first"
+                            ]
+                        }
+                    },
+                    {
+                        "name": "projectsV2Direction",
+                        "type": "select",
+                        "label": "Direction",
+                        "validate": {
+                            "enum": [
+                                "first",
+                                "first"
+                            ]
+                        }
+                    },
+                    {
+                        "name": "projectsV2Amount",
+                        "type": "number",
+                        "label": "Amount",
+                        "validate": {
+                            "max": 100,
+                            "min": 0
+                        }
+                    },
+                    {
+                        "name": "login",
+                        "type": "select",
+                        "label": "Owner",
+                        "required": true
+                    },
+                    {
+                        "name": "outputKeys",
+                        "type": "select",
+                        "label": "Output",
+                        "multiple": true,
+                        "validate": {
+                            "enum": [
+                                "company",
+                                "databaseId",
+                                "hovercard{contexts{message octicon}}",
+                                "interactionAbility{expiresAt limit origin}",
+                                "isBountyHunter",
+                                "isCampusExpert",
+                                "isDeveloperProgramMember",
+                                "isEmployee",
+                                "isFollowingViewer",
+                                "isGitHubStar",
+                                "isHireable",
+                                "isSiteAdmin",
+                                "isViewer",
+                                "location",
+                                "pinnedItemsRemaining",
+                                "projectsResourcePath",
+                                "projectsUrl",
+                                "resourcePath",
+                                "status",
+                                "viewerCanChangePinnedItems",
+                                "viewerCanCreateProjects",
+                                "viewerCanFollow",
+                                "viewerIsFollowing"
+                            ]
+                        }
+                    },
+                    {
+                        "name": "commitComments",
+                        "type": "boolean",
+                        "label": "Show Commit Comments"
+                    },
+                    {
+                        "name": "followers",
+                        "type": "boolean",
+                        "label": "Show Followers"
+                    },
+                    {
+                        "name": "following",
+                        "type": "boolean",
+                        "label": "Show Following"
+                    },
+                    {
+                        "name": "gists",
+                        "type": "boolean",
+                        "label": "Show Gists"
+                    },
+                    {
+                        "name": "gistComments",
+                        "type": "boolean",
+                        "label": "Show Gist Comments"
+                    },
+                    {
+                        "name": "issues",
+                        "type": "boolean",
+                        "label": "Show Issues"
+                    },
+                    {
+                        "name": "issueComments",
+                        "type": "boolean",
+                        "label": "Show Issue Comments"
+                    },
+                    {
+                        "name": "organizations",
+                        "type": "boolean",
+                        "label": "Show Organizations"
+                    },
+                    {
+                        "name": "pullRequests",
+                        "type": "boolean",
+                        "label": "Show Pull Requests"
+                    },
+                    {
+                        "name": "repositories",
+                        "type": "boolean",
+                        "label": "Show Repositories"
+                    },
+                    {
+                        "name": "savedReplies",
+                        "type": "boolean",
+                        "label": "Show Saved Replies"
+                    },
+                    {
+                        "name": "projectsV2",
+                        "type": "boolean",
+                        "label": "Show Projects"
+                    },
+                    {
+                        "name": "watching",
+                        "type": "boolean",
+                        "label": "Show Watching"
+                    },
+                    {
+                        "name": "pullRequestsDirection",
+                        "type": "select",
+                        "label": "Direction",
+                        "validate": {
+                            "enum": [
+                                "first",
+                                "first"
+                            ]
+                        }
+                    },
+                    {
+                        "name": "savedRepliesDirection",
+                        "type": "select",
+                        "label": "Direction",
+                        "validate": {
+                            "enum": [
+                                "first",
+                                "first"
+                            ]
+                        }
+                    },
+                    {
+                        "name": "projectsV2Direction",
+                        "type": "select",
+                        "label": "Direction",
+                        "validate": {
+                            "enum": [
+                                "first",
+                                "first"
+                            ]
+                        }
+                    },
+                    {
+                        "name": "projectsV2Amount",
+                        "type": "number",
+                        "label": "Amount",
+                        "validate": {
+                            "max": 100,
+                            "min": 0
+                        }
+                    }
+                ],
+                "advanced": true
+            }
+        },
+        {
+            "id": 2,
+            "module": "telegram:SendReplyMessage",
+            "version": 1,
+            "metadata": {
+                "designer": {
+                    "x": 300,
+                    "y": 0
+                }
+            }
+        }
+    ],
+    "metadata": {
+        "instant": false,
+        "version": 1,
+        "scenario": {
+            "roundtrips": 200,
+            "maxErrors": 3,
+            "autoCommit": true,
+            "autoCommitTriggerLast": true,
+            "sequential": true,
+            "slots": null,
+            "confidential": false,
+            "dataloss": true,
+            "dlq": true,
+            "freshVariables": false
+        },
+        "designer": {
+            "orphans": []
+        },
+        "zone": "us1.make.com"
+    }
+}
